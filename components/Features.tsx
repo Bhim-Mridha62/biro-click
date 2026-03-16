@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
 export default function Features() {
   const features = [
     {
@@ -38,13 +42,35 @@ export default function Features() {
     },
   ];
 
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="py-20 bg-white" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
             כל הסיבות{" "}
-            <span className="bg-gradient-to-l from-sky-500 via-violet-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-l from-sky-500 via-violet-500 to-pink-500 bg-clip-text text-transparent">
               לבחור בנו
             </span>
           </h2>
@@ -54,10 +80,11 @@ export default function Features() {
           {features.map((f, i) => (
             <div
               key={i}
-              className="flex flex-col items-center text-center p-6 animate-fade-in-up"
-              style={{ animationDelay: `${i * 0.2}s` }}
+              ref={(el) => { cardRefs.current[i] = el; }}
+              className="flex flex-col items-center text-center p-6 translate-y-[60px] opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-md bg-gradient-to-br text-white from-[#EC4899] to-[#DB2777]">
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-md bg-linear-to-br text-white from-[#EC4899] to-[#DB2777]">
                 {f.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{f.title}</h3>
@@ -69,3 +96,4 @@ export default function Features() {
     </section>
   );
 }
+

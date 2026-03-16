@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const testimonials = [
   {
@@ -23,7 +26,7 @@ const testimonials = [
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[0] }) {
   return (
-    <div className="flex-1 rounded-3xl bg-[#fafafa] px-6 py-5 text-right shadow-[0_18px_60px_rgba(15,23,42,0.05)] md:px-8 md:py-6 animate-fade-in-up">
+    <div className="flex-1 rounded-3xl bg-[#fafafa] px-6 py-5 text-right shadow-[0_18px_60px_rgba(15,23,42,0.05)] md:px-8 md:py-6">
       <div className="mb-4 flex items-center justify-between gap-3">
         <div className="flex flex-col items-start">
           <span className="text-sm font-bold text-slate-900">{t.name}</span>
@@ -53,7 +56,7 @@ function StatCard({
 }) {
   return (
     <div
-      className={`rounded-3xl bg-primary px-6 py-8 text-right text-white shadow-[0_24px_70px_rgba(236,72,153,0.5)] animate-fade-in-up ${className}`}
+      className={`rounded-3xl bg-primary px-6 py-8 text-right text-white shadow-[0_24px_70px_rgba(236,72,153,0.5)] ${className}`}
     >
       <div className="text-3xl font-extrabold leading-tight md:text-4xl">{value}</div>
       <div className="mt-2 text-sm md:text-base">{label}</div>
@@ -62,12 +65,37 @@ function StatCard({
 }
 
 export default function Testimonials() {
+  const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    rowRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative bg-white py-20" dir="rtl">
       <div className="container mx-auto max-w-6xl px-4 md:px-8">
         <div className="space-y-8">
           {/* Row 1: Testimonial + 1.2 Million */}
-          <div className="flex flex-col gap-6 md:flex-row md:items-stretch">
+          <div
+            ref={(el) => { rowRefs.current[0] = el; }}
+            className="flex flex-col gap-6 md:flex-row md:items-stretch translate-y-[60px] opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
+          >
             <TestimonialCard t={testimonials[0]} />
             <div className="md:w-80">
               <StatCard
@@ -79,9 +107,12 @@ export default function Testimonials() {
           </div>
 
           {/* Row 2: 4 Minutes + Testimonial */}
-          <div className="flex flex-col-reverse gap-6 md:flex-row md:items-stretch">
+          <div
+            ref={(el) => { rowRefs.current[1] = el; }}
+            className="flex flex-col-reverse gap-6 md:flex-row md:items-stretch translate-y-[60px] opacity-0 transition-all duration-700 ease-out delay-150 [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
+          >
             <div className="md:w-80">
-              <div className="rounded-3xl bg-primary px-6 py-7 text-center text-white shadow-[0_20px_60px_rgba(236,72,153,0.45)] md:text-right h-full flex flex-col justify-center animate-fade-in-up">
+              <div className="rounded-3xl bg-primary px-6 py-7 text-center text-white shadow-[0_20px_60px_rgba(236,72,153,0.45)] md:text-right h-full flex flex-col justify-center">
                 <div className="text-3xl font-extrabold tracking-tight md:text-4xl">4 דקות</div>
                 <div className="mt-1 text-xs md:text-sm">זמן ממוצע בתהליך</div>
               </div>
@@ -90,7 +121,10 @@ export default function Testimonials() {
           </div>
 
           {/* Row 3: Testimonial + 130 */}
-          <div className="flex flex-col gap-6 md:flex-row md:items-stretch">
+          <div
+            ref={(el) => { rowRefs.current[2] = el; }}
+            className="flex flex-col gap-6 md:flex-row md:items-stretch translate-y-[60px] opacity-0 transition-all duration-700 ease-out delay-300 [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
+          >
             <TestimonialCard t={testimonials[2]} />
             <div className="md:w-80">
               <StatCard
@@ -105,3 +139,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

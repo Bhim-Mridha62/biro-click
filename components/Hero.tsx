@@ -79,7 +79,7 @@ export default function Hero() {
             </div>
             <h1 className="mb-4 text-2xl font-light text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl animate-fade-in-up animation-delay-200">
               פחות בירוקרטיה,<br />
-              <span className="bg-gradient-to-l from-sky-500 via-violet-500 to-pink-500 bg-clip-text font-bold text-transparent">
+              <span className="bg-linear-to-l from-sky-500 via-violet-500 to-pink-500 bg-clip-text font-bold text-transparent">
                 יותר כסף בכיס שלך.
               </span>
             </h1>
@@ -87,7 +87,7 @@ export default function Hero() {
               בירוקליק מאחדת את כל הכלים שיעזרו לך לקבל את מה שמגיע לך בצורה פשוטה, חכמה ובמינימום מאמץ.
             </p>
             <div className="ml-auto flex max-w-md md:max-w-lg animate-fade-in-up animation-delay-600">
-              <button className="flex items-center justify-center gap-2 shadow-primary/20 py-4 font-bold group h-12 rounded-full bg-[#EC4899] px-10 text-sm text-white shadow-[0_18px_45px_rgba(236,72,153,0.55)] transition-transform duration-300 hover:-translate-y-0.5 hover:bg-[#DB2777] hover:shadow-[0_22px_55px_rgba(236,72,153,0.65)] sm:text-base">
+              <button className="flex items-center justify-center gap-2 shadow-primary/20 py-4 font-bold group h-12 rounded-full bg-[#EC4899] px-10 text-sm text-white shadow-[0_18px_45px_rgba(236,72,153,0.55)] transition-transform duration-300 hover:scale-[1.02] hover:bg-[#DB2777] hover:shadow-[0_22px_55px_rgba(236,72,153,0.65)] sm:text-base">
                 <span className="flex items-center gap-2" dir="rtl">
                   התחילו עכשיו
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 transition-transform duration-300 group-hover:-translate-x-1">
@@ -103,13 +103,13 @@ export default function Hero() {
         {/* Partner logos */}
         <div className="mt-16 px-2 py-6 overflow-hidden animate-fade-in-up animation-delay-800">
           <div className="flex items-center justify-center gap-4 md:gap-5">
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-gradient-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 blur-sm opacity-60" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-gradient-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-gradient-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-gradient-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-gradient-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-gradient-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-gradient-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 blur-sm opacity-60" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 blur-sm opacity-60" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 blur-sm opacity-60" />
           </div>
         </div>
       </div>

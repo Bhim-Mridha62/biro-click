@@ -10,12 +10,12 @@ export default function Header() {
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center">
         {/* Mobile */}
         <div className="flex md:hidden w-full items-center justify-between">
-          <button className="transition-all duration-200 flex items-center justify-center gap-2 shadow-primary/20 py-2 rounded-full px-6 bg-primary hover:bg-primary/90 text-white shadow-[0_8px_20px_rgba(245,67,135,0.35)] text-sm">
+          <button className="transition-all hover:scale-[1.02] duration-200 flex items-center justify-center gap-2 shadow-primary/20 py-2 rounded-full px-6 bg-primary hover:bg-primary/90 text-white shadow-[0_8px_20px_rgba(245,67,135,0.35)] text-sm">
             התחילו
           </button>
           <div className="flex flex-col items-center">
-            <span className="text-lg font-bold text-primary">בירוקליק</span>
-            <span className="text-[9px] text-gray-500">בירוקרטיה בקליק</span>
+            <span className="text-lg font-bold text-primary leading-none">בירוקליק</span>
+            <span className="text-[9px] text-gray-500 tracking-[0.18em]">בירוקרטיה בקליק</span>
           </div>
           <button
             className="p-2 text-secondary hover:bg-gray-100 rounded-full transition-colors"
@@ -31,7 +31,7 @@ export default function Header() {
 
         {/* Desktop */}
         <div className="hidden md:flex w-full items-center justify-between">
-          <button className="transition-all duration-200 flex items-center justify-center gap-2 shadow-primary/20 py-2 text-sm rounded-full px-5 bg-primary hover:bg-primary/90 text-white shadow-[0_8px_20px_rgba(245,67,135,0.35)]">
+          <button className="transition-all hover:scale-[1.02] duration-200 flex items-center justify-center gap-2 shadow-primary/20 py-2 text-sm rounded-full px-5 bg-primary hover:bg-primary/90 text-white shadow-[0_8px_20px_rgba(245,67,135,0.35)]">
             התחילו עכשיו
           </button>
           <nav className="flex-1 flex items-center justify-center gap-10 text-sm text-secondary/80">

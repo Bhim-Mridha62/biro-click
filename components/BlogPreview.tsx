@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const posts = [
   {
@@ -28,13 +31,35 @@ const posts = [
 ];
 
 export default function BlogPreview() {
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-white py-20">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold leading-tight text-slate-900 md:text-4xl">
             קצת תוכן{" "}
-            <span className="bg-gradient-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
               שבטוח יעניין
             </span>{" "}
             אתכם
@@ -45,8 +70,9 @@ export default function BlogPreview() {
           {posts.map((post, i) => (
             <div
               key={i}
-              className="mx-auto flex h-full max-w-sm flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_8px_25px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(15,23,42,0.08)] group animate-fade-in-up"
-              style={{ animationDelay: `${i * 0.2}s` }}
+              ref={(el) => { cardRefs.current[i] = el; }}
+              className="mx-auto flex h-full max-w-sm flex-col overflow-hidden rounded-[28px] bg-white shadow-[0_8px_25px_rgba(15,23,42,0.04)] transition-all duration-700 ease-out hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(15,23,42,0.08)] group translate-y-[60px] opacity-0 [&.in-view]:translate-y-0 [&.in-view]:opacity-100"
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
               <div className="relative h-52 overflow-hidden md:h-56">
                 <Image
@@ -76,3 +102,4 @@ export default function BlogPreview() {
     </section>
   );
 }
+

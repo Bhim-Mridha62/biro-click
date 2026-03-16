@@ -35,7 +35,7 @@ export default function HowItWorks() {
         <div className="mb-12 text-center" dir="rtl">
           <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
             איך זה עובד?{" "}
-            <span className="bg-gradient-to-l from-sky-500 via-violet-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-l from-sky-500 via-violet-500 to-pink-500 bg-clip-text text-transparent">
               פשוט.
             </span>
           </h2>
@@ -75,7 +75,7 @@ export default function HowItWorks() {
                 ref={step1Ref}
                 className="relative flex gap-4 md:gap-6 translate-x-[80px] opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
               >
-                <div className="relative z-10 flex-shrink-0">
+                <div className="relative z-10 shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white shadow-none md:h-14 md:w-14 bg-blue-50 text-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
                       <path d="M12.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v9.5" />
@@ -98,7 +98,7 @@ export default function HowItWorks() {
                 ref={step2Ref}
                 className="relative flex gap-4 md:gap-6 translate-x-[80px] opacity-0 transition-all duration-700 ease-out delay-200 [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
               >
-                <div className="relative z-10 flex-shrink-0">
+                <div className="relative z-10 shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white shadow-none md:h-14 md:w-14 bg-purple-50 text-purple-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
                       <path d="M12 13v8" />
@@ -119,9 +119,9 @@ export default function HowItWorks() {
               {/* Step 3 */}
               <div
                 ref={step3Ref}
-                className="relative flex gap-4 md:gap-6 translate-x-[80px] opacity-0 transition-all duration-700 ease-out delay-[400ms] [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
+                className="relative flex gap-4 md:gap-6 translate-x-[80px] opacity-0 transition-all duration-700 ease-out delay-400 [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
               >
-                <div className="relative z-10 flex-shrink-0">
+                <div className="relative z-10 shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white shadow-none md:h-14 md:w-14 bg-green-50 text-green-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
                       <circle cx="12" cy="12" r="10" />
@@ -140,7 +140,7 @@ export default function HowItWorks() {
             </div>
 
             <div className="mt-10 flex">
-              <button className="transition-all duration-200 flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary-dark shadow-lg shadow-primary/20 rounded-full px-10 py-2.5 text-sm md:px-12 md:text-base">
+              <button className="transition-all hover:scale-[1.02] duration-200 flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary-dark shadow-lg shadow-primary/20 rounded-full px-10 py-2.5 text-sm md:px-12 md:text-base">
                 התחילו עכשיו
               </button>
             </div>

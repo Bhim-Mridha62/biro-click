@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 
 const faqData = [
   {
@@ -37,14 +37,35 @@ function FAQItem({
   index: number;
 }) {
   const contentRef = useRef<HTMLDivElement>(null);
+  const itemRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    if (itemRef.current) observer.observe(itemRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
-      className={`rounded-2xl bg-white/95 transition-all duration-300 animate-fade-in-up ${isOpen
+      ref={itemRef}
+      className={`rounded-2xl bg-white/95 transition-all duration-300 ${inView ? "translate-y-0 opacity-100" : "translate-y-[40px] opacity-0"
+        } ${isOpen
           ? "shadow-[0_18px_40px_rgba(15,23,42,0.07)] ring-1 ring-pink-100"
           : "shadow-[0_8px_24px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_30px_rgba(15,23,42,0.05)]"
         }`}
-      style={{ animationDelay: `${index * 0.1}s` }}
+      style={{ transitionDelay: `${index * 100}ms` }}
     >
       <button
         className="flex w-full items-center justify-between px-6 py-5 text-right md:px-8 cursor-pointer"
@@ -55,8 +76,8 @@ function FAQItem({
         </span>
         <div
           className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen
-              ? "border-pink-400 bg-pink-500 text-white rotate-0"
-              : "border-pink-100 bg-white text-pink-500 rotate-0"
+            ? "border-pink-400 bg-pink-500 text-white rotate-0"
+            : "border-pink-100 bg-white text-pink-500 rotate-0"
             }`}
         >
           <svg
@@ -84,7 +105,7 @@ function FAQItem({
 
       {/* Animated answer container */}
       <div
-        className="overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        className="overflow-hidden transition-all duration-400 ease-in-out"
         style={{
           maxHeight: isOpen
             ? `${contentRef.current?.scrollHeight ?? 200}px`
@@ -115,7 +136,7 @@ export default function FAQ() {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4">
         <h2 className="mb-12 text-center text-3xl font-bold text-slate-900 md:text-4xl">
-          <span className="bg-gradient-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
             שאלות
           </span>{" "}
           שאולי יש לכם

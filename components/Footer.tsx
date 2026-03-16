@@ -1,12 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-white to-gray-50 pt-12 md:pt-16 pb-6 md:pb-8 border-t border-gray-100" dir="rtl">
+    <footer className="bg-linear-to-b from-white to-gray-50 pt-12 md:pt-16 pb-6 md:pb-8 border-t border-gray-100" dir="rtl">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Logo */}
           <div className="flex flex-col items-end col-span-1">
             <div className="flex flex-col items-end">
-              <span className="text-3xl md:text-4xl font-bold bg-gradient-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
+              <span className="text-3xl md:text-4xl font-bold bg-linear-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
                 ביירוקלידי
               </span>
               <span className="text-xs text-slate-600 tracking-wide mt-1">בירוקרטיה בקליק</span>
