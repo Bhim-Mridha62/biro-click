@@ -40,7 +40,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[0] }) {
           height={40}
         />
       </div>
-      <p className="text-sm leading-relaxed text-slate-700 md:text-base">{t.text}</p>
+      <p className="text-sm text-slate-700 md:text-base">{t.text}</p>
     </div>
   );
 }
@@ -49,15 +49,18 @@ function StatCard({
   value,
   label,
   className = "",
+  top = "",
 }: {
   value: string;
   label: string;
   className?: string;
+  top?: string;
 }) {
   return (
     <div
       className={`rounded-3xl bg-primary px-6 py-8 text-right text-white shadow-[0_24px_70px_rgba(236,72,153,0.5)] ${className}`}
     >
+      <span className="text-gray-200">{top}</span>
       <div className="text-3xl font-extrabold leading-tight md:text-4xl">{value}</div>
       <div className="mt-2 text-sm md:text-base">{label}</div>
     </div>
@@ -99,6 +102,7 @@ export default function Testimonials() {
             <TestimonialCard t={testimonials[0]} />
             <div className="md:w-80">
               <StatCard
+                top="₪"
                 value="1.2 מיליון"
                 label="כסף שנכנס ללקוחות בירוקליק"
                 className="h-full"

@@ -28,7 +28,7 @@ export default function ContactForm() {
               type="tel"
             />
           </div>
-          <button className="rounded-xl transition-all duration-200 flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary-dark w-full sm:w-auto px-6 md:px-8 py-2.5 md:py-3 text-sm md:text-base shadow-lg shadow-primary/20 whitespace-nowrap">
+          <button className="rounded-xl hover:scale-[1.02] cursor-pointer transition-all duration-200 flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary-dark w-full sm:w-auto px-6 md:px-8 py-2.5 md:py-3 text-sm md:text-base shadow-lg shadow-primary/20 whitespace-nowrap">
             שליחה
           </button>
         </form>

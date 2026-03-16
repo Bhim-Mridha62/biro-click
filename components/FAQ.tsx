@@ -115,7 +115,7 @@ function FAQItem({
       >
         <div
           ref={contentRef}
-          className="border-t border-pink-50 px-6 pb-5 pt-3 text-sm leading-relaxed text-slate-600 md:px-8"
+          className="border-t border-pink-50 px-6 pb-5 pt-3 text-sm text-slate-600 md:px-8"
         >
           {faq.answer}
         </div>

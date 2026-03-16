@@ -88,7 +88,7 @@ export default function Tools() {
                   </div>
                   <div className="mt-4" dir="rtl">
                     <h3 className="mb-2 text-lg font-bold text-slate-900">{tool.title}</h3>
-                    <p className="mb-4 text-sm leading-relaxed text-slate-600">{tool.desc}</p>
+                    <p className="mb-4 text-sm text-slate-600">{tool.desc}</p>
                     <p className="border-t border-slate-100 pt-3 text-xs text-slate-500">{tool.footer}</p>
                   </div>
                   <button className="mt-4 cursor-pointer flex items-center gap-1 text-xs font-bold text-pink-500 transition-all hover:gap-2" dir="rtl">
@@ -111,7 +111,7 @@ export default function Tools() {
               </span>{" "}
               שלנו
             </h2>
-            <p className="mb-6 text-sm leading-relaxed text-slate-600 md:text-base">
+            <p className="mb-6 text-sm text-slate-600 md:text-base">
               הכלים שלנו מודרכים ועובדים עבורכם כדי שתוכלו לקבל את מה שמגיע לכם בקלות ובמהירות. כלים נוספים ימשיכו להיכנס בהמשך ולהרחיב את היכולות.
             </p>
             <p className="text-xs text-slate-400 md:text-sm">

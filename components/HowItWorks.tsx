@@ -87,7 +87,7 @@ export default function HowItWorks() {
                 <div className="pt-1.5">
                   <span className="mb-1 block text-sm font-bold text-pink-500">שלב 1</span>
                   <h3 className="mb-1 text-lg font-bold text-slate-900 md:text-xl">מילוי פרטים</h3>
-                  <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+                  <p className="text-sm text-slate-600 md:text-base">
                     מילוי מהיר של פרטי התביעה והנתונים האישיים עם ליווי בוט AI שמנחה בכל צעד.
                   </p>
                 </div>
@@ -110,7 +110,7 @@ export default function HowItWorks() {
                 <div className="pt-1.5">
                   <span className="mb-1 block text-sm font-bold text-pink-500">שלב 2</span>
                   <h3 className="mb-1 text-lg font-bold text-slate-900 md:text-xl">צירוף מסמכים</h3>
-                  <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+                  <p className="text-sm text-slate-600 md:text-base">
                     העלאת מסמכים ותמונות בקלות, ישירות מהמחשב או מהטלפון.
                   </p>
                 </div>
@@ -132,7 +132,7 @@ export default function HowItWorks() {
                 <div className="pt-1.5">
                   <span className="mb-1 block text-sm font-bold text-pink-500">שלב 3</span>
                   <h3 className="mb-1 text-lg font-bold text-slate-900 md:text-xl">הגשה וסיום</h3>
-                  <p className="text-sm leading-relaxed text-slate-600 md:text-base">
+                  <p className="text-sm  text-slate-600 md:text-base">
                     סקירה סופית, תשלום מאובטח והגשה מקוונת של התביעה בלחיצה אחת.
                   </p>
                 </div>

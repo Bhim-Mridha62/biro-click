@@ -57,7 +57,7 @@ export default function BlogPreview() {
     <section className="bg-white py-20">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold leading-tight text-slate-900 md:text-4xl">
+          <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
             קצת תוכן{" "}
             <span className="bg-linear-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
               שבטוח יעניין
@@ -93,7 +93,7 @@ export default function BlogPreview() {
                 <h3 className="mb-2 text-right text-lg font-bold text-slate-900 md:text-xl">
                   {post.title}
                 </h3>
-                <p className="text-right text-sm leading-relaxed text-slate-600">{post.desc}</p>
+                <p className="text-right text-sm text-slate-600 leading-relaxed">{post.desc}</p>
               </div>
             </div>
           ))}
