@@ -74,7 +74,7 @@ export default function Hero() {
 
           {/* Text Content */}
           <div className="text-right md:pr-6 order-2 md:order-2" dir="rtl">
-            <div className="mb-3 inline-block rounded-full bg-pink-100/60 px-3 py-1 text-xs font-semibold text-pink-700 animate-fade-in-up">
+            <div className="mb-3 inline-block tracking-[0.1px] rounded-full bg-pink-100/60 px-3 py-1 text-xs font-semibold text-pink-700 animate-fade-in-up">
               הטכנולוגיה של בירוקליק משנה את המשחק 🚀
             </div>
             <h1 className="mb-4 text-2xl font-light text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl animate-fade-in-up animation-delay-200">
@@ -83,7 +83,7 @@ export default function Hero() {
                 יותר כסף בכיס שלך.
               </span>
             </h1>
-            <p className="mb-8 ml-auto max-w-md text-sm leading-relaxed text-slate-600 sm:text-base md:max-w-lg animate-fade-in-up animation-delay-400">
+            <p className="mb-8 ml-auto max-w-md text-sm text-slate-600 sm:text-base md:max-w-lg animate-fade-in-up animation-delay-400">
               בירוקליק מאחדת את כל הכלים שיעזרו לך לקבל את מה שמגיע לך בצורה פשוטה, חכמה ובמינימום מאמץ.
             </p>
             <div className="ml-auto flex max-w-md md:max-w-lg animate-fade-in-up animation-delay-600">

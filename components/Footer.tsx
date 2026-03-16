@@ -7,7 +7,7 @@ export default function Footer() {
           <div className="flex flex-col items-end col-span-1">
             <div className="flex flex-col items-end">
               <span className="text-3xl md:text-4xl font-bold bg-gradient-to-l from-fuchsia-500 via-pink-500 to-sky-500 bg-clip-text text-transparent">
-                בירוקליק
+                ביירוקלידי
               </span>
               <span className="text-xs text-slate-600 tracking-wide mt-1">בירוקרטיה בקליק</span>
             </div>
@@ -15,12 +15,13 @@ export default function Footer() {
 
           {/* Links */}
           <div className="flex flex-col items-end gap-3 md:gap-4">
-            <h4 className="font-bold text-slate-900 text-xs md:text-sm">קישורים</h4>
+            <h4 className="font-bold text-slate-900 text-xs md:text-sm">קויו</h4>
             <div className="flex flex-col items-end gap-2 md:gap-3 text-right">
               <a href="#" className="text-slate-600 hover:text-primary transition-colors text-xs md:text-sm">ראשי</a>
               <a href="#" className="text-slate-600 hover:text-primary transition-colors text-xs md:text-sm">איך זה עובד</a>
-              <a href="#" className="text-slate-600 hover:text-primary transition-colors text-xs md:text-sm">הכלים שלנו</a>
-              <a href="#" className="text-slate-600 hover:text-primary transition-colors text-xs md:text-sm">שאלות נפוצות</a>
+              <a href="#" className="text-slate-600 hover:text-primary transition-colors text-xs md:text-sm">הקלים שלנו</a>
+              <a href="#" className="text-slate-600 hover:text-primary transition-colors text-xs md:text-sm">לדיוקויות משפחיות</a>
+              <a href="#" className="text-slate-600 hover:text-primary transition-colors text-xs md:text-sm">שאלות נשאלות</a>
             </div>
           </div>
 
@@ -49,7 +50,7 @@ export default function Footer() {
         </div>
 
         <div className="w-full border-t border-gray-200 pt-6 md:pt-8 text-center">
-          <p className="text-xs md:text-sm text-slate-600">בירוקליק 2025 כל הזכויות שמורות</p>
+          <p className="text-xs md:text-sm text-slate-600">בתביעקים 2025 כל הזכויות שמורות</p>
         </div>
       </div>
     </footer>

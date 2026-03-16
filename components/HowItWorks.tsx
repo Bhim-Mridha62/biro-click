@@ -1,8 +1,36 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 export default function HowItWorks() {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const step1Ref = useRef<HTMLDivElement>(null);
+  const step2Ref = useRef<HTMLDivElement>(null);
+  const step3Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    [imageRef, step1Ref, step2Ref, step3Ref].forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative -mt-10 z-10 rounded-t-[40px] bg-white py-16 shadow-sm" dir="ltr">
+    <section className="relative -mt-10 z-10 rounded-t-[40px] bg-white py-16 shadow-sm overflow-hidden" dir="ltr">
       <div className="container mx-auto max-w-5xl px-4 md:px-8">
         <div className="mb-12 text-center" dir="rtl">
           <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
@@ -14,9 +42,12 @@ export default function HowItWorks() {
         </div>
 
         <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)]">
-          {/* Image */}
-          <div className="flex justify-center md:justify-start">
-            <div className="relative h-64 w-64 overflow-visible rounded-full bg-white md:h-80 md:w-80 animate-fade-in-up">
+          {/* Image — slides in from left */}
+          <div
+            ref={imageRef}
+            className="flex justify-center md:justify-start translate-x-[-80px] opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
+          >
+            <div className="relative h-64 w-64 overflow-visible rounded-full bg-white md:h-80 md:w-80">
               <div className="absolute inset-0 rounded-full border border-slate-100" />
               <div className="absolute inset-6 rounded-full border border-slate-100" />
               <div className="absolute inset-12 overflow-hidden rounded-full bg-slate-100">
@@ -31,13 +62,19 @@ export default function HowItWorks() {
             </div>
           </div>
 
-          {/* Steps */}
-          <div className="relative" dir="rtl">
+          {/* Steps — each slides in from right, staggered */}
+          <div
+            className="relative"
+            dir="rtl"
+          >
             <div className="pointer-events-none absolute right-[30px] top-3 hidden h-[calc(100%-3rem)] w-px bg-slate-100 md:block" />
 
             <div className="space-y-10">
               {/* Step 1 */}
-              <div className="relative flex gap-4 md:gap-6 animate-fade-in-up">
+              <div
+                ref={step1Ref}
+                className="relative flex gap-4 md:gap-6 translate-x-[80px] opacity-0 transition-all duration-700 ease-out [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
+              >
                 <div className="relative z-10 flex-shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white shadow-none md:h-14 md:w-14 bg-blue-50 text-blue-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
@@ -57,7 +94,10 @@ export default function HowItWorks() {
               </div>
 
               {/* Step 2 */}
-              <div className="relative flex gap-4 md:gap-6 animate-fade-in-up animation-delay-200">
+              <div
+                ref={step2Ref}
+                className="relative flex gap-4 md:gap-6 translate-x-[80px] opacity-0 transition-all duration-700 ease-out delay-200 [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
+              >
                 <div className="relative z-10 flex-shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white shadow-none md:h-14 md:w-14 bg-purple-50 text-purple-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">
@@ -77,7 +117,10 @@ export default function HowItWorks() {
               </div>
 
               {/* Step 3 */}
-              <div className="relative flex gap-4 md:gap-6 animate-fade-in-up animation-delay-400">
+              <div
+                ref={step3Ref}
+                className="relative flex gap-4 md:gap-6 translate-x-[80px] opacity-0 transition-all duration-700 ease-out delay-[400ms] [&.in-view]:translate-x-0 [&.in-view]:opacity-100"
+              >
                 <div className="relative z-10 flex-shrink-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white shadow-none md:h-14 md:w-14 bg-green-50 text-green-600">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 md:h-7 md:w-7">

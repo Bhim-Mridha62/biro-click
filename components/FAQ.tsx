@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const faqData = [
   {
@@ -25,6 +25,84 @@ const faqData = [
   },
 ];
 
+function FAQItem({
+  faq,
+  isOpen,
+  onToggle,
+  index,
+}: {
+  faq: { question: string; answer: string };
+  isOpen: boolean;
+  onToggle: () => void;
+  index: number;
+}) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div
+      className={`rounded-2xl bg-white/95 transition-all duration-300 animate-fade-in-up ${isOpen
+          ? "shadow-[0_18px_40px_rgba(15,23,42,0.07)] ring-1 ring-pink-100"
+          : "shadow-[0_8px_24px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_30px_rgba(15,23,42,0.05)]"
+        }`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <button
+        className="flex w-full items-center justify-between px-6 py-5 text-right md:px-8 cursor-pointer"
+        onClick={onToggle}
+      >
+        <span className="text-sm font-bold text-slate-900 md:text-lg">
+          {faq.question}
+        </span>
+        <div
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen
+              ? "border-pink-400 bg-pink-500 text-white rotate-0"
+              : "border-pink-100 bg-white text-pink-500 rotate-0"
+            }`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 12h14" />
+            <path
+              d="M12 5v14"
+              className="origin-center transition-transform duration-300"
+              style={{
+                transform: isOpen ? "scaleY(0)" : "scaleY(1)",
+              }}
+            />
+          </svg>
+        </div>
+      </button>
+
+      {/* Animated answer container */}
+      <div
+        className="overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
+        style={{
+          maxHeight: isOpen
+            ? `${contentRef.current?.scrollHeight ?? 200}px`
+            : "0px",
+          opacity: isOpen ? 1 : 0,
+        }}
+      >
+        <div
+          ref={contentRef}
+          className="border-t border-pink-50 px-6 pb-5 pt-3 text-sm leading-relaxed text-slate-600 md:px-8"
+        >
+          {faq.answer}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number>(0);
 
@@ -44,50 +122,18 @@ export default function FAQ() {
         </h2>
 
         <div className="space-y-3">
-          {faqData.map((faq, i) => {
-            const isOpen = openIndex === i;
-            return (
-              <div
-                key={i}
-                className={`overflow-hidden rounded-2xl bg-white/95 transition-all duration-300 animate-fade-in-up ${isOpen
-                    ? "shadow-[0_18px_40px_rgba(15,23,42,0.07)] ring-1 ring-pink-100"
-                    : "shadow-[0_8px_24px_rgba(15,23,42,0.03)] hover:shadow-[0_12px_30px_rgba(15,23,42,0.05)]"
-                  }`}
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                <button
-                  className="flex w-full items-center justify-between px-6 py-5 text-right md:px-8"
-                  onClick={() => setOpenIndex(isOpen ? -1 : i)}
-                >
-                  <span className="text-sm font-bold text-slate-900 md:text-lg">{faq.question}</span>
-                  <div
-                    className={`flex h-8 w-8 items-center justify-center rounded-full border transition-colors ${isOpen
-                        ? "border-pink-400 bg-pink-500 text-white"
-                        : "border-pink-100 bg-white text-pink-500"
-                      }`}
-                  >
-                    {isOpen ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14" />
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14" />
-                        <path d="M12 5v14" />
-                      </svg>
-                    )}
-                  </div>
-                </button>
-                {isOpen && (
-                  <div className="mt-1 border-t border-pink-50 px-6 pb-5 pt-3 text-sm leading-relaxed text-slate-600 md:px-8">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+          {faqData.map((faq, i) => (
+            <FAQItem
+              key={i}
+              faq={faq}
+              isOpen={openIndex === i}
+              onToggle={() => setOpenIndex(openIndex === i ? -1 : i)}
+              index={i}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
