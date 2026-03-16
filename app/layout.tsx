@@ -10,7 +10,7 @@ const notoSansHebrew = Noto_Sans_Hebrew({
 });
 
 export const metadata: Metadata = {
-  title: "BiroClick - בירוקליק",
+  title: "BiroClick",
   description:
     "פחות בירוקרטיה, יותר כסף בכיס שלך. בירוקליק מאחדת את כל הכלים שיעזרו לך לקבל את מה שמגיע לך.",
 };
