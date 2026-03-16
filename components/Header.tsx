@@ -14,7 +14,7 @@ export default function Header() {
             התחילו
           </button>
           <div className="flex flex-col items-center">
-            <span className="text-lg font-bold text-primary leading-none">בירוקליק</span>
+            <span className="text-lg font-bold text-primary">בירוקליק</span>
             <span className="text-[9px] text-gray-500">בירוקרטיה בקליק</span>
           </div>
           <button
@@ -41,7 +41,7 @@ export default function Header() {
             <button className="hover:text-primary transition-colors">ראשי</button>
           </nav>
           <div className="flex flex-col items-end">
-            <span className="text-xl md:text-2xl font-bold text-primary leading-none">בירוקליק</span>
+            <span className="text-xl md:text-2xl font-bold text-primary">בירוקליק</span>
             <span className="text-[10px] text-gray-500 tracking-[0.18em]">בירוקרטיה בקליק</span>
           </div>
         </div>

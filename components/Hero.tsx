@@ -77,7 +77,7 @@ export default function Hero() {
             <div className="mb-3 inline-block rounded-full bg-pink-100/60 px-3 py-1 text-xs font-semibold text-pink-700 animate-fade-in-up">
               הטכנולוגיה של בירוקליק משנה את המשחק 🚀
             </div>
-            <h1 className="mb-4 text-2xl font-light leading-snug text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl animate-fade-in-up animation-delay-200">
+            <h1 className="mb-4 text-2xl font-light text-slate-900 sm:text-3xl md:text-4xl lg:text-5xl animate-fade-in-up animation-delay-200">
               פחות בירוקרטיה,<br />
               <span className="bg-gradient-to-l from-sky-500 via-violet-500 to-pink-500 bg-clip-text font-bold text-transparent">
                 יותר כסף בכיס שלך.
