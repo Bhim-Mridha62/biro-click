@@ -9,7 +9,7 @@ export default function Hero() {
         <div className="grid items-center gap-8 md:gap-12 md:grid-cols-2">
           {/* Animated Circle Illustration */}
           <div className="flex justify-center md:justify-start order-1 md:order-1">
-            <div className="relative h-[280px] w-[280px] md:h-[380px] md:w-[380px] animate-fade-in-up">
+            <div className="relative h-[280px] w-[280px] md:h-[380px] md:w-[380px] animate-fade-in-left">
               {/* Concentric circles */}
               <div className="absolute inset-4 rounded-full border border-gray-200/70" />
               <div className="absolute inset-10 rounded-full border border-gray-200/60" />
