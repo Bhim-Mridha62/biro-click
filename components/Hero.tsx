@@ -104,11 +104,11 @@ export default function Hero() {
         <div className="mt-16 px-2 py-6 overflow-hidden animate-fade-in-up animation-delay-800">
           <div className="flex items-center justify-center gap-4 md:gap-5">
             <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 blur-sm opacity-60" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
-            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 ease-out" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 ease-out" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 ease-out" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 ease-out" />
+            <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 ease-out" />
             <div className="min-w-[80px] flex-1 max-w-[140px] rounded bg-linear-to-b from-gray-200 to-gray-300 transition duration-300 hover:from-gray-300 hover:to-gray-400 h-12 border border-gray-300/50 blur-sm opacity-60" />
           </div>
         </div>
