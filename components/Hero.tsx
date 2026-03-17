@@ -30,7 +30,7 @@ export default function Hero() {
               </div>
 
               {/* File text icon */}
-              <div className="absolute right-[0%] top-[1%] flex h-13 w-13 items-center justify-center rounded-2xl animate-float-reverse">
+              <div className="absolute -right-[4%] top-[2%] flex h-13 w-13 items-center justify-center rounded-2xl animate-float-reverse">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-sky-500">
                   <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
                   <path d="M14 2v4a2 2 0 0 0 2 2h4" />
@@ -41,7 +41,7 @@ export default function Hero() {
               </div>
 
               {/* Spreadsheet icon */}
-              <div className="absolute right-6 bottom-[10%] flex h-13 w-13 items-center justify-center border border-gray-100 animate-float">
+              <div className="absolute right-2 bottom-[8%] flex h-13 w-13 items-center justify-center border border-gray-100 animate-float">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-emerald-500">
                   <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
                   <path d="M14 2v4a2 2 0 0 0 2 2h4" />
@@ -53,14 +53,14 @@ export default function Hero() {
               </div>
 
               {/* Star icon */}
-              <div className="absolute left-6 bottom-[8%] flex h-13 w-13 items-center justify-center animate-float-slow">
+              <div className="absolute left-4 bottom-[3%] flex h-13 w-13 items-center justify-center animate-float-slow">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-amber-400 fill-amber-300">
                   <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
                 </svg>
               </div>
 
               {/* Sparkles icon */}
-              <div className="absolute left-[52%] top-[7%] flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-2xl bg-white shadow-md shadow-slate-200/80 border border-gray-100 animate-float-reverse">
+              <div className="absolute left-[55%] top-[7%] flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-2xl bg-white shadow-md shadow-slate-200/80 border border-gray-100 animate-float-reverse">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-violet-500">
                   <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
                   <path d="M20 3v4" />
